@@ -15,7 +15,7 @@ const routes: Routes = [
   {path:'home/arrancadores', component:ArrancadoresComponent}, 
   {path:'home/balastos', component:BalastosComponent},
   {path:'home/condensadores', component:CondensadoresComponent},
-
+  {path:'formulario', component:FormularioComponent}
 ];
 
 @NgModule({

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl} from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-formulario',
@@ -6,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./formulario.component.scss']
 })
 export class FormularioComponent implements OnInit {
+  toppings = new FormControl();
+  toppingList: string[] = ['Normal', 'Severa', 'Reducida'];
 
   constructor() { }
 
@@ -13,3 +18,4 @@ export class FormularioComponent implements OnInit {
   }
 
 }
+

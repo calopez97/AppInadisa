@@ -16,30 +16,33 @@ import { ArrancadoresComponent } from './components/home/arrancadores/arrancador
 import { CondensadoresComponent } from './components/home/condensadores/condensadores.component';
 import { BalastosComponent } from './components/home/balastos/balastos.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
-
-
+import { ReactiveFormsModule, FormsModule  } from '@angular/forms'; 
+import {MatSelectModule} from '@angular/material/select';
 
 
 
 @NgModule({
-  declarations: [
+  declarations: [ 
+    FormularioComponent,
     LoginComponent,
     AppComponent,
     NavbarComponent,
     HomeComponent,
     ArrancadoresComponent,
     CondensadoresComponent,
-    BalastosComponent,
-    FormularioComponent, 
+    BalastosComponent, 
   ],
-  imports: [
+  
+  imports: [MatSelectModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatModule,
     MatCardModule,
     MatDividerModule,
-    MatTooltipModule
+    MatTooltipModule,
+    FormsModule
   ], 
 
   providers: [],
@@ -47,3 +50,4 @@ import { FormularioComponent } from './components/formulario/formulario.componen
 })
 
 export class AppModule { }
+
