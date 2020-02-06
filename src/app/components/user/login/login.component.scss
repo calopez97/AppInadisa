@@ -1,0 +1,39 @@
+.loginComponent {
+    background: url(https://images.pexels.com/photos/132700/pexels-photo-132700.jpeg?cs=srgb&dl=people-laptop-industry-internet-132700.jpg&fm=jpg);
+    background-position: right center;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+
+    
+.ejemplo-contenedor {
+min-width: 150px;
+width: 100%;
+}
+      
+.example-full-width{
+    width: 100%;
+}
+
+.mat-form-field-flex{
+    width: 280px;
+}
+
+.mat-card{ 
+    background-color: #ffffff98;;
+}
+
+.mat-raised-button{
+    background-color: #065C9A !important;
+    transform: translateX(95px); 
+}
+
+.matInput{
+    color: white !important;
+}
+
+.mat-focused .placeholder {
+    color: #00D318;
+}
