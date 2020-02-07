@@ -18,6 +18,8 @@ import { BalastosComponent } from './components/home/balastos/balastos.component
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { ReactiveFormsModule, FormsModule  } from '@angular/forms'; 
 import {MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 
@@ -42,7 +44,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatCardModule,
     MatDividerModule,
     MatTooltipModule,
-    FormsModule
+    FormsModule,
+    MatRadioModule,
+    MatCheckboxModule,
   ], 
 
   providers: [],

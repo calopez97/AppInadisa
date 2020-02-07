@@ -10,3 +10,51 @@
     margin-bottom:10px
 }
 
+.mat-divider{
+border:groove 2px !important; 
+position: unset !important
+}
+
+.mat-radio-bottom{
+    background-color: #3F51B5 !important;
+    color: white;
+}
+ 
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+}
+
+.example-radio-button {
+    margin: 5px;
+}
+
+.mat-form-field-underline {
+    color: black;
+    width: 330px ;
+    height: 2px;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+}
+
+.example-h2 {
+    margin: 10px;
+}
+  
+.example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+}
+  
+.example-margin {
+    margin: 0 10px;
+}
+
+.contaierModule{
+    background-color: #E1E1E1;
+}
