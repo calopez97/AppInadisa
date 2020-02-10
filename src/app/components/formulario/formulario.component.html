@@ -3,90 +3,204 @@
     <mat-card-header>
         <mat-card-title>ARRANCADOR</mat-card-title>
     </mat-card-header>
-    <mat-divider></mat-divider>
     <mat-card-content>
-        <mat-form-field>
-            <input matInput placeholder="SEMANA" class="form-control" name="semana" ngModel>
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Fabricación" class="form-control" name="Fabricación" ngModel>
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Tamaño de Lote" class="form-control" name="Tamaño de Lote" ngModel>
-        </mat-form-field>
+        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    TIPO
+                </mat-panel-title>
+                <mat-icon>add_circle</mat-icon>
+            </mat-expansion-panel-header>
+            <mat-form-field>
+                <mat-label>Código del arrancador</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-action-row>
+                <button mat-button color="primary" (click)="nextStep()">SIGUIENTE</button>
+            </mat-action-row>
+        </mat-expansion-panel>
         <br>
-        <mat-form-field>
-            <input matInput placeholder="Nº de Muestras" class="form-control" name="Nº de Muestras" ngModel>
-        </mat-form-field>
-        <br>
-        <mat-form-field>
-            <input matInput placeholder="Nº de muestras eléctricas" class="form-control"
-                name="Nº de muestras eléctricas" ngModel>
-        </mat-form-field>
-        <br>
-        <mat-form-field>
-            <input matInput placeholder="Nº de muestras mecánicas" class="form-control" name="Nº de muestras mecánicas"
-                ngModel>
-        </mat-form-field>
+        <form class="example-form">
+            <table class="example-full-width" cellspacing="0">
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Tamaño de Lote</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Semana</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Fabricacion</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </table>
+            <table class="example-full-width" cellspacing="0">
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Muestras</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Muestras Electricas</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Muestras Mecanicas</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </table>
+        </form>
         <br>
         <mat-divider></mat-divider>
         <br>
         <mat-card-header>
             <mat-card-title>CLASE</mat-card-title>
         </mat-card-header>
-        <mat-form-field>
-            <mat-label> Mecánica </mat-label>
-            <mat-select [formControl]="toppings">
-                <mat-option *ngFor="let topping of toppingList" [value]=" topping "> {{topping}} </mat-option>
-            </mat-select>
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label> Eléctrica </mat-label>
-            <mat-select [formControl]="toppings">
-                <mat-option *ngFor="let topping of toppingList" [value]=" topping "> {{topping}} </mat-option>
-            </mat-select>
-        </mat-form-field>
+        <tr>
+            <td style="padding-left: 35px;">
+                <mat-card-header>
+                    <mat-card-subtitle>Mecánica.</mat-card-subtitle>
+                </mat-card-header>
+                <mat-selection-list #Toppings>
+                    <mat-list-option *ngFor="let topping of toppingList">
+                        {{topping}}
+                    </mat-list-option>
+                </mat-selection-list>
+            </td>
+            <td style="padding-left: 240px;">
+                <mat-card-header>
+                    <mat-card-subtitle>Eléctrica.</mat-card-subtitle>
+                </mat-card-header>
+                <mat-selection-list #Toppings>
+                    <mat-list-option *ngFor="let topping of toppingList">
+                        {{topping}}
+                    </mat-list-option>
+                </mat-selection-list>
+            </td>
+        </tr>
         <br>
         <mat-divider></mat-divider>
         <br>
         <mat-card-header>
             <mat-card-title> INSPECCIÓN MECÁNICA </mat-card-title>
         </mat-card-header>
-        <mat-form-field>
-            <mat-label> EMPAQUE </mat-label>
-            <mat-select [formControl]="Empaque" multiple>
-                <mat-option *ngFor="let Empaque of EmpaqueList" [value]="Empaque"> {{Empaque}} </mat-option>
-            </mat-select>
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label> PRODUCTO </mat-label>
-            <mat-select [formControl]="Producto" multiple>
-                <mat-option *ngFor="let Producto of ProductoList" [value]="Producto"> {{Producto}} </mat-option>
-            </mat-select>
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label> TERMINALES </mat-label>
-            <mat-select [formControl]="Terminales" multiple>
-                <mat-option *ngFor="let Terminales of TerminalesList" [value]="Terminales"> {{Terminales}} </mat-option>
-            </mat-select>
-            <br>
-        </mat-form-field>
-            <h2 class="example-h2">RESULTADO INSPEC MECÁNICA</h2>
-            <section class="example-section">
-                <mat-checkbox class="example-margin" [(ngModel)]="aceptado">ACEPTADO</mat-checkbox>
-                <mat-checkbox class="example-margin" [(ngModel)]="rechazado">RECHAZADO</mat-checkbox>
-            </section>
-        <!-- <mat-radio-group aria-label="INS. MECÁNICA">
-                <mat-radio-button value="1">ACEPTADO</mat-radio-button>
-                <mat-radio-button value="2">RECHAZADO</mat-radio-button>
-            </mat-radio-group> -->
+        <br>
+        <tr>
+            <td style="padding-right: 15px;">
+                <mat-card-header>
+                    <mat-card-subtitle>Empaque</mat-card-subtitle>
+                </mat-card-header>
+                <mat-selection-list #Empaque>
+                    <mat-list-option *ngFor="let Empaque of EmpaqueList">
+                        {{Empaque}}
+                    </mat-list-option>
+                </mat-selection-list>
+            </td>
+            <td style="padding-right: 15px;">
+                <mat-card-header>
+                    <mat-card-subtitle>Producto</mat-card-subtitle>
+                </mat-card-header>
+                <mat-selection-list #Producto>
+                    <mat-list-option *ngFor="let Producto of ProductoList">
+                        {{Producto}}
+                    </mat-list-option>
+                </mat-selection-list>
+            </td>
+            <td style="padding-right: 15px;">
+                <mat-card-header>
+                    <mat-card-subtitle>Terminales</mat-card-subtitle>
+                </mat-card-header>
+                <mat-selection-list #Terminales>
+                    <mat-list-option *ngFor="let Terminales of TerminalesList">
+                        {{Terminales}}
+                    </mat-list-option>
+                </mat-selection-list>
+            </td>
+        </tr>
+        <br>
+        <mat-card-title class="example-h2">RESULTADO INSPECCION MECÁNICA</mat-card-title>
+        <mat-radio-group class="example-section">
+            <mat-radio-button value="1">ACEPTADO</mat-radio-button>
+            <mat-radio-button value="2">RECHAZADO</mat-radio-button>
+        </mat-radio-group>
         <br>
     </mat-card-content>
-</mat-card>
-<mat-card class="contact-card">
+    <mat-divider></mat-divider>
+    <br>
     <mat-card-header>
         <mat-card-title>INSPECCION ELECTRICA</mat-card-title>
     </mat-card-header>
-    <mat-divider></mat-divider>
+    <form class="example-form">
+        <table class="example-full-width" cellspacing="0">
 
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Balasto de Prueba</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Tipo Arrancador</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Tensión de Prueba[V]</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Máximo Pico [Kv]</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Mínimo Pico[Kv]</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+        <!-- <table mat-table>
+        <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Maximopicopositivo">
+            <th mat-header-cell> Máximo Pico Positivo [Kv] </th>
+            <input matInput>
+            <td mat-cell *matCellDef="let element">{{element.Maximopicopositivo}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Minimopiconegativo">
+            <th mat-header-cell> Máximo Pico Negativo [Kv] </th>
+            <input matInput>
+            <td mat-cell *matCellDef="let element">{{element.Minimopiconegativo}}</td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table> -->
+    </form>
 </mat-card>

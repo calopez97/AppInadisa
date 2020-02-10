@@ -1,6 +1,7 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-        <a style="color: white; text-decoration: none;" href="http://localhost:4200/home">INADISA </a>
+        <a style="color: white; text-decoration: none;" href="http://localhost:4200/home"><mat-icon>home</mat-icon>  INADISA </a>
+        
         <button mat-button [matMenuTriggerFor]="PRODUCTOS" style=transform:translateX(35px);color:white;>PRODUCTOS
             &#9660;</button>
         <mat-menu #PRODUCTOS="matMenu">
@@ -22,7 +23,8 @@
             Test AppInadisa">Camilo Lopez</span>
         </div>
         <mat-divider role="separator" aria-orientation="vertical"></mat-divider>
-        <button mat-button style="transform: translateX(1130px);"> SALIR </button>
+        <button mat-button style="transform: translateX(1130px);"> SALIR <mat-icon>exit_to_app</mat-icon>
+        </button>
 
         <!-- <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon> -->
         <!-- <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon> -->

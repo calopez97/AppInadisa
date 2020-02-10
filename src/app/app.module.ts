@@ -20,6 +20,18 @@ import { ReactiveFormsModule, FormsModule  } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatListModule} from '@angular/material/list';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import {MatTableModule} from '@angular/material/table';
+
+
+
+
+
+
 
 
 
@@ -47,6 +59,11 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     FormsModule,
     MatRadioModule,
     MatCheckboxModule,
+    MatSliderModule,
+    MatListModule,
+    MatExpansionModule,
+    MatIconModule,
+    MatInputModule, MatTableModule
   ], 
 
   providers: [],
