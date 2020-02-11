@@ -1,21 +1,21 @@
 .mat-card{
-    // display:table;
-    // margin-left: 180px;
-    // width: 330px;
-    // height: 75px;
-    // margin-top: 30px;
-    // height: 160px;
+    display:table;
+    margin-left: 180px;
+    width: 330px;
+    height: 75px;
+    margin-top: 30px;
+    height: 160px;
     text-align: center; 
     box-shadow: 0px 2px 10px;
-    // margin-bottom:10px
-    width: 83%;
-    max-width: 100%;
-    margin: 4% 7% 4% 7%;
-    overflow-y: auto;
-    height: 550px !important;
-    max-height: 550px !important;
-    border-radius: 24px;
-    padding: 26px;
+    margin-bottom:10px;
+    // width: 83%;
+    // max-width: 100%;
+    // margin: 4% 7% 4% 7%;
+    // overflow-y: auto;
+    // height: 550px !important;
+    // max-height: 550px !important;
+    border-radius: 15px;
+    // padding: 26px;
 }
 
 .mat-divider{
@@ -113,5 +113,38 @@ position: unset !important
 }
 
 .mat-radio-group{
-    display: list-item;
+    display: block;
 }
+
+.mat-elevation-z8{
+    background-color: #e1e1e138; 
+    box-shadow: -3px 1px 5px 0px #00000047;
+    width: 730px;
+    display: inline-block; 
+    border:solid 1px #0000004a;
+}
+
+td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+    border-bottom: none !important;
+}
+
+.mat-raised-button{
+    background-color: #3F51B5;
+    color: white;
+}
+
+.mat-header-row{
+    background-color: gainsboro;  
+}
+.mat-cell{
+    display: grid;
+}
+
+.mat-elevation-z7{
+    background-color: #e1e1e138; 
+    box-shadow: -3px 1px 5px 0px #00000047;
+    width: 350px;
+    display: block !important;
+    margin-left: 100px;
+}
+

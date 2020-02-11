@@ -139,16 +139,14 @@
             <mat-radio-button value="1">ACEPTADO</mat-radio-button>
             <mat-radio-button value="2">RECHAZADO</mat-radio-button>
         </mat-radio-group>
-        <br>
     </mat-card-content>
     <mat-divider></mat-divider>
     <br>
     <mat-card-header>
-        <mat-card-title>INSPECCION ELECTRICA</mat-card-title>
+        <mat-card-title>INSPECCIÓN ELÉCTRICA</mat-card-title>
     </mat-card-header>
     <form class="example-form">
         <table class="example-full-width" cellspacing="0">
-
             <tr>
                 <td>
                     <mat-form-field class="example-full-width">
@@ -184,6 +182,108 @@
                 </td>
             </tr>
         </table>
+        <br>
+        <mat-table #table [dataSource]="myDataArray" class="mat-elevation-z8">
+            <ng-container matColumnDef="Muestras">
+                <th mat-header-cell *matHeaderCellDef>Muestras</th>
+                <td mat-cell *matCellDef="let user; let i = index;"> {{i+1}} </td>
+            </ng-container>
+            <ng-container matColumnDef="Maximopicopositivo">
+                <mat-header-cell *matHeaderCellDef>Máximo Pico Positivo[Kv]</mat-header-cell>
+                <mat-cell *matCellDef="let user">
+                    <div> {{user.Maximopicopositivo}} </div>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="Minimopiconegativo">
+                <mat-header-cell *matHeaderCellDef> Mínimo Pico Negativo[Kv] </mat-header-cell>
+                <mat-cell *matCellDef="let user">
+                    <div> {{user.Minimopiconegativo}} </div>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="pulsemiciclo">
+                <mat-header-cell *matHeaderCellDef> Pulso por Semiciclo </mat-header-cell>
+                <mat-cell *matCellDef="let user">
+                    <div> {{user.pulsemiciclo}} </div>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="pulciclo">
+                <mat-header-cell *matHeaderCellDef> Pulso por Ciclo </mat-header-cell>
+                <mat-cell *matCellDef="let user">
+                    <div> {{user.pulciclo}} </div>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="ton">
+                <mat-header-cell *matHeaderCellDef> Tensión ON [V] </mat-header-cell>
+                <mat-cell *matCellDef="let user">
+                    <div> {{user.ton}} </div>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="toff">
+                <mat-header-cell *matHeaderCellDef> Tensión Off [V] </mat-header-cell>
+                <mat-cell *matCellDef="let user">
+                    <div> {{user.toff}} </div>
+                </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+            <mat-row *matRowDef="let dataSource; columns: columnsToDisplay;"></mat-row>
+        </mat-table>
+        <br>
+        <p style="display: inline-block;">
+            <!-- <mat-form-field apparence="legacy">
+                <mat-label>No</mat-label>
+                <input matInput [(ngModel)]="newUser.No" type="text" name="newNo" id="newNo"
+                    class="form-control">
+            </mat-form-field> -->
+            <tr>
+                <td>
+                    <mat-form-field apparence="legacy">
+                        <mat-label>Máximo Pico Positivo[Kv]</mat-label>
+                        <input matInput [(ngModel)]="newUser.Maximopicopositivo" type="text"
+                            name="newMaximopicopositivo" id="newMaximopicopositivo" class="form-control">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field apparence="legacy">
+                        <mat-label>Mínimo Pico Positivo[Kv]</mat-label>
+                        <input matInput [(ngModel)]="newUser.Minimopiconegativo" type="text"
+                            name="newMinimopiconegativo" id="newMinimopiconegativo" class="form-control">
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field apparence="legacy">
+                        <mat-label>Pulso por Semiciclo</mat-label>
+                        <input matInput [(ngModel)]="newUser.pulsemiciclo" type="text" name="newpulsemiciclo"
+                            id="newpulsemiciclo" class="form-control">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field apparence="legacy">
+                        <mat-label>Pulso por ciclo</mat-label>
+                        <input matInput [(ngModel)]="newUser.pulciclo" type="text" name="newpulciclo" id="newpulciclo"
+                            class="form-control">
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field apparence="legacy">
+                        <mat-label>Tensión ON [V]</mat-label>
+                        <input matInput [(ngModel)]="newUser.ton" type="text" name="newton" id="newton"
+                            class="form-control">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field apparence="legacy">
+                        <mat-label>Tensión Off [V]</mat-label>
+                        <input matInput [(ngModel)]="newUser.toff" type="text" name="newtoff" id="newtoff"
+                            class="form-control">
+                    </mat-form-field>
+                </td>
+            </tr>
+        </p>
+        <button mat-raised-button type="button" (click)="addName()" style="color: Accent;">Registrar</button>
         <!-- <table mat-table>
         <ng-container matColumnDef="position">
             <th mat-header-cell *matHeaderCellDef> No. </th>
@@ -202,5 +302,91 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table> -->
+        <br>
+    </form>
+    <mat-divider></mat-divider>
+    <br>
+    <mat-card-header>
+        <mat-card-title>ANCHO DE PULSOS</mat-card-title>
+    </mat-card-header>
+    <form class="ancho-form">
+        <table class="example-full-width" cellspacing="1">
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Ancho Total</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Medido a </mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <mat-divider></mat-divider>
+        <br>
+        <mat-card-header>
+            <mat-card-title>MEDIDA ANCHO DE PULSOS</mat-card-title>
+            <mat-card-subtitle>Muestra Máximo Pico positivo</mat-card-subtitle>
+        </mat-card-header>
+        <br>
+        <tr>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Muestra No</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Número de Pulsos </mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </td>
+        </tr>
+        <mat-table #table [dataSource]="dataSource" class="mat-elevation-z7">
+            <ng-container matColumnDef="pulsos">
+              <th mat-header-cell *matHeaderCellDef> Pulsos </th>
+              <td mat-cell *matCellDef="let element; let i = index;"> {{i+1}} </td>
+            </ng-container>
+            <ng-container matColumnDef="picokv">
+                <mat-header-cell *matHeaderCellDef>Pico[Kv]</mat-header-cell>
+                <mat-cell *matCellDef="let user1">
+                    <div> {{user1.picokv}} </div>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="anchoms">
+                <th mat-header-cell *matHeaderCellDef >Ancho [ms]</th>
+                <td mat-cell *matCellDef="let user1">
+                    <div> {{user1.anchoms}} </div>
+                </td>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="columnsToDisplay1"></mat-header-row>
+            <mat-row *matRowDef="let dataSource; columns: columnsToDisplay1;"></mat-row>
+        </mat-table>   
+        <br>
+        <p>
+            <tr>
+                <td>
+                    <mat-form-field apparence="legacy">
+                        <mat-label>Pico [Kv]</mat-label>
+                        <input matInput [(ngModel)]="newUser1.picokv" type="text"
+                            name="newpicokv" id="newpicokv" class="form-control">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field apparence="legacy">
+                        <mat-label>Ancho [Ms]</mat-label>
+                        <input matInput [(ngModel)]="newUser1.anchoms" type="text"
+                            name="newanchoms" id="newanchoms" class="form-control">
+                    </mat-form-field>
+                </td> 
+            </tr>      
+        </p> 
+        <button mat-raised-button type="button" (click)="addPulse()" style="color: Accent;">Registrar</button> 
     </form>
 </mat-card>

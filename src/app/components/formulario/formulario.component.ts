@@ -1,5 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl} from '@angular/forms';
+import { MatTableDataSource } from '@angular/material';
+
+export interface user {
+  Maximopicopositivo: string;
+  Minimopiconegativo: string;
+  pulsemiciclo: string;
+  pulciclo: string; 
+  ton: string;
+  toff: string;
+}
+
+export interface user1{
+  picokv: string;
+  anchoms: string; 
+}
 // import { MatInput } from '@angular/material';
 
 
@@ -31,6 +46,37 @@ import {FormControl} from '@angular/forms';
 })
 
 export class FormularioComponent implements OnInit {
+  columnsToDisplay: string[] = ["Muestras","Maximopicopositivo", "Minimopiconegativo","pulsemiciclo","pulciclo", "ton","toff"];
+  public USER_DATA: user[] = [
+  ];
+  public newUser = {Maximopicopositivo: "", Minimopiconegativo:"", pulsemiciclo:"", pulciclo:"", ton:"", toff:""};
+  public myDataArray: any;
+
+  addName() {
+    const newUsersArray = this.USER_DATA;
+    newUsersArray.push(this.newUser);
+    this.myDataArray = [...newUsersArray];
+    this.newUser = {Maximopicopositivo:"", Minimopiconegativo:"", pulsemiciclo:"", pulciclo:"",ton:"", toff:""};
+    console.warn(this.myDataArray);
+  }
+
+  columnsToDisplay1: string[] = ["pulsos","picokv", "anchoms"];
+  public USER_DATA1: user1[] = [
+  ];
+  public newUser1 = {picokv: "", anchoms:""};
+  public dataSource: any;
+
+  addPulse() {
+    const newUsersArray = this.USER_DATA1;
+    newUsersArray.push(this.newUser1);
+    this.dataSource = [...newUsersArray];
+    this.newUser1 = {picokv:"", anchoms:""};
+    console.warn(this.dataSource);
+  }
+ 
+  
+  
+
   step = 0;
 
   setStep(index: number) {
@@ -66,7 +112,9 @@ export class FormularioComponent implements OnInit {
 
   // displayedColumns: string[] = ['position','Maximopicopositivo','Minimopiconegativo']
 
-  constructor() { }
+  constructor() { 
+    this.myDataArray = new MatTableDataSource<user>([...this.USER_DATA]);
+  }
 
   ngOnInit() {
   }
