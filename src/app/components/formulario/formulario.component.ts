@@ -15,29 +15,11 @@ export interface user1{
   picokv: string;
   anchoms: string; 
 }
-// import { MatInput } from '@angular/material';
 
-
-// export interface PeriodicElement {
-//   position: number;
-//   Maximopicopositivo: any; 
-//   Minimopiconegativo: any;
- 
-// }
-
-// const ELEMENT_DATA: PeriodicElement[] = [
-//   {position: 1, Maximopicopositivo: MatInput, Minimopiconegativo: MatInput }, 
-//   {position: 2,Maximopicopositivo: MatInput, Minimopiconegativo: MatInput}, 
-//   {position: 3,Maximopicopositivo: MatInput, Minimopiconegativo: MatInput}, 
-//   {position: 4,Maximopicopositivo: MatInput, Minimopiconegativo: MatInput}, 
-//   {position: 5,Maximopicopositivo: MatInput, Minimopiconegativo: MatInput}, 
-//   {position: 6,Maximopicopositivo: MatInput, Minimopiconegativo: MatInput}, 
-//   {position: 7,Maximopicopositivo: MatInput, Minimopiconegativo: MatInput}, 
-//   {position: 8,Maximopicopositivo: MatInput, Minimopiconegativo: MatInput}, 
-//   {position: 9, Maximopicopositivo: MatInput, Minimopiconegativo: MatInput}] espere, dejeme un momento 
-// Esto es lo que llevo, pero simplemente queria meter una datatable aqui.
-
-
+export interface user2{
+  picokv1: string;
+  anchoms1: string; 
+}
 
 @Component({
   selector: 'app-formulario',
@@ -49,8 +31,11 @@ export class FormularioComponent implements OnInit {
   columnsToDisplay: string[] = ["Muestras","Maximopicopositivo", "Minimopiconegativo","pulsemiciclo","pulciclo", "ton","toff"];
   public USER_DATA: user[] = [
   ];
+  
   public newUser = {Maximopicopositivo: "", Minimopiconegativo:"", pulsemiciclo:"", pulciclo:"", ton:"", toff:""};
   public myDataArray: any;
+  resultado: string;
+  
 
   addName() {
     const newUsersArray = this.USER_DATA;
@@ -73,7 +58,20 @@ export class FormularioComponent implements OnInit {
     this.newUser1 = {picokv:"", anchoms:""};
     console.warn(this.dataSource);
   }
- 
+
+  columnsToDisplay2: string[] = ["pulsos1","picokv1", "anchoms1"];
+  public USER_DATA2: user2[] = [
+  ];
+  public newUser2 = {picokv1: "", anchoms1:""};
+  public dataSource2: any;
+
+  addPulseMin() {
+    const newUsersArray = this.USER_DATA2;
+    newUsersArray.push(this.newUser2);
+    this.dataSource2 = [...newUsersArray];
+    this.newUser2 = {picokv1:"", anchoms1:""};
+    console.warn(this.dataSource2);
+  }
   
   
 
@@ -107,11 +105,15 @@ export class FormularioComponent implements OnInit {
   Terminales= new FormControl();
   TerminalesList: String[] = ['Estado','Longitud'];
 
+  rack= new FormControl(); 
+  rackList: string[]= ['Pasa','No Pasa']
+
+  cum= new FormControl(); 
+  cumList: string[]=['Cumple', 'No Cumple'] 
+
   aceptado = false;
   rechazado = false; 
-
-  // displayedColumns: string[] = ['position','Maximopicopositivo','Minimopiconegativo']
-
+  
   constructor() { 
     this.myDataArray = new MatTableDataSource<user>([...this.USER_DATA]);
   }

@@ -228,7 +228,7 @@
             <mat-row *matRowDef="let dataSource; columns: columnsToDisplay;"></mat-row>
         </mat-table>
         <br>
-        <p style="display: inline-block;">
+        <p style="display: table; margin-left: 155px;">
             <!-- <mat-form-field apparence="legacy">
                 <mat-label>No</mat-label>
                 <input matInput [(ngModel)]="newUser.No" type="text" name="newNo" id="newNo"
@@ -283,7 +283,8 @@
                 </td>
             </tr>
         </p>
-        <button mat-raised-button type="button" (click)="addName()" style="color: Accent;">Registrar</button>
+        <button mat-raised-button type="button" (click)="addName()"
+            style="color: Accent;margin-bottom: 10px;">Registrar</button>
         <!-- <table mat-table>
         <ng-container matColumnDef="position">
             <th mat-header-cell *matHeaderCellDef> No. </th>
@@ -310,7 +311,7 @@
         <mat-card-title>ANCHO DE PULSOS</mat-card-title>
     </mat-card-header>
     <form class="ancho-form">
-        <table class="example-full-width" cellspacing="1">
+        <table class="example-full-width" cellspacing="1" style="display: initial;">
             <tr>
                 <td>
                     <mat-form-field class="example-full-width">
@@ -334,7 +335,7 @@
             <mat-card-subtitle>Muestra Máximo Pico positivo</mat-card-subtitle>
         </mat-card-header>
         <br>
-        <tr>
+        <tr style="display: initial;">
             <td>
                 <mat-form-field class="example-full-width">
                     <mat-label>Muestra No</mat-label>
@@ -348,10 +349,10 @@
                 </mat-form-field>
             </td>
         </tr>
-        <mat-table #table [dataSource]="dataSource" class="mat-elevation-z7">
+        <mat-table #table [dataSource]="dataSource" class="mat-elevation-z7" style="margin-left: 85px;">
             <ng-container matColumnDef="pulsos">
-              <th mat-header-cell *matHeaderCellDef> Pulsos </th>
-              <td mat-cell *matCellDef="let element; let i = index;"> {{i+1}} </td>
+                <th mat-header-cell *matHeaderCellDef> Pulsos </th>
+                <td mat-cell *matCellDef="let element; let i = index;"> {{i+1}} </td>
             </ng-container>
             <ng-container matColumnDef="picokv">
                 <mat-header-cell *matHeaderCellDef>Pico[Kv]</mat-header-cell>
@@ -360,33 +361,164 @@
                 </mat-cell>
             </ng-container>
             <ng-container matColumnDef="anchoms">
-                <th mat-header-cell *matHeaderCellDef >Ancho [ms]</th>
+                <th mat-header-cell *matHeaderCellDef>Ancho [ms]</th>
                 <td mat-cell *matCellDef="let user1">
                     <div> {{user1.anchoms}} </div>
                 </td>
             </ng-container>
             <mat-header-row *matHeaderRowDef="columnsToDisplay1"></mat-header-row>
             <mat-row *matRowDef="let dataSource; columns: columnsToDisplay1;"></mat-row>
-        </mat-table>   
+        </mat-table>
         <br>
         <p>
-            <tr>
+            <tr style="display: initial">
                 <td>
                     <mat-form-field apparence="legacy">
                         <mat-label>Pico [Kv]</mat-label>
-                        <input matInput [(ngModel)]="newUser1.picokv" type="text"
-                            name="newpicokv" id="newpicokv" class="form-control">
+                        <input matInput [(ngModel)]="newUser1.picokv" type="text" name="newpicokv" id="newpicokv"
+                            class="form-control">
                     </mat-form-field>
                 </td>
                 <td>
                     <mat-form-field apparence="legacy">
                         <mat-label>Ancho [Ms]</mat-label>
-                        <input matInput [(ngModel)]="newUser1.anchoms" type="text"
-                            name="newanchoms" id="newanchoms" class="form-control">
+                        <input matInput [(ngModel)]="newUser1.anchoms" type="text" name="newanchoms" id="newanchoms"
+                            class="form-control">
                     </mat-form-field>
-                </td> 
-            </tr>      
-        </p> 
-        <button mat-raised-button type="button" (click)="addPulse()" style="color: Accent;">Registrar</button> 
+                </td>
+            </tr>
+            <!-- <p>La suma de los dos valores es:{{resultado}}</p>    -->
+        </p>
+        <button mat-raised-button type="button" (click)="addPulse()"
+            style="color: Accent; margin-bottom: 10px;">Registrar</button>
+        <!-- <button mat-raised-button color="primary" (click)="sumar()">Sumar</button> -->
+        <br>
+        <mat-divider></mat-divider>
+        <br>
+        <mat-card-header>
+            <mat-card-subtitle>Muestra Mínimo Pico Negativo</mat-card-subtitle>
+        </mat-card-header>
+        <tr style="display: initial;">
+            <td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Muestra No</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Número de Pulsos </mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </td>
+        </tr>
+        <mat-table #table [dataSource]="dataSource2" class="mat-elevation-z7" style="margin-left: 85px;">
+            <ng-container matColumnDef="pulsos1">
+                <th mat-header-cell *matHeaderCellDef> Pulsos </th>
+                <td mat-cell *matCellDef="let element; let i = index;"> {{i+1}} </td>
+            </ng-container>
+            <ng-container matColumnDef="picokv1">
+                <mat-header-cell *matHeaderCellDef>Pico[Kv]</mat-header-cell>
+                <mat-cell *matCellDef="let user2">
+                    <div> {{user2.picokv1}} </div>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="anchoms1">
+                <th mat-header-cell *matHeaderCellDef>Ancho [ms]</th>
+                <td mat-cell *matCellDef="let user2">
+                    <div> {{user2.anchoms1}} </div>
+                </td>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="columnsToDisplay2"></mat-header-row>
+            <mat-row *matRowDef="let dataSource2; columns: columnsToDisplay2;"></mat-row>
+        </mat-table>
+        <p>
+            <tr style="display: initial;">
+                <td>
+                    <mat-form-field apparence="legacy">
+                        <mat-label>Pico [Kv]</mat-label>
+                        <input matInput [(ngModel)]="newUser2.picokv1" type="text" name="newpicokv1" id="newpicokv1"
+                            class="form-control">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field apparence="legacy">
+                        <mat-label>Ancho [Ms]</mat-label>
+                        <input matInput [(ngModel)]="newUser2.anchoms1" type="text" name="newanchoms1" id="newanchoms1"
+                            class="form-control">
+                    </mat-form-field>
+                </td>
+            </tr>
+            <!-- <p>La suma de los dos valores es:{{resultado}}</p>    -->
+        </p>
+        <button mat-raised-button type="button" (click)="addPulseMin()" style="color: Accent;">Registrar</button>
+        <br>
     </form>
+    <br>
+    <mat-divider></mat-divider>
+    <br>
+    <tr style="background-color: gainsboro; box-shadow: 0px 2px 10px;transform: translateX(-235px);">
+        <td style="padding: 10px; border: solid 1px; border-color: #5b5b5b57">
+            <mat-card-header style="border-bottom: solid 1px; border-color: #5b5b5b57">
+                <mat-card-title class="example-h2">RIGIDEZ DIELÉCTRICA</mat-card-title>
+                <mat-card-subtitle>[2U + 1000V]/60s</mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-selection-list #cum>
+                <mat-list-option *ngFor="let cum of cumList">
+                    {{cum}}
+                </mat-list-option>
+            </mat-selection-list>
+        </td>
+        <td style="padding: 10px; border: solid 1px; border-color: #5b5b5b57">
+            <mat-card-header style="border-bottom: solid 1px; border-color: #5b5b5b57">
+                <mat-card-title class="example-h2">RESISTENCIA DE AISLAMIENTO</mat-card-title>
+                <mat-card-subtitle>[500VDc]/2M&Omega;</mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-selection-list #cum>
+                <mat-list-option *ngFor="let cum of cumList">
+                    {{cum}}
+                </mat-list-option>
+            </mat-selection-list>
+        </td>
+    </tr>
+    <br>
+    <tr style="background-color: #DCDCDC; box-shadow: 0px 2px 10px;transform: translate(265px, -187px);">
+        <td style="padding:10px; border: solid 1px; border-color: #5b5b5b57">
+            <mat-card-header>
+                <mat-card-title>ENCENDIDO DE BOMBILLA</mat-card-title>
+            </mat-card-header>
+            <mat-radio-group>
+                <mat-selection-list #cum>
+                    <mat-list-option *ngFor="let cum of cumList">
+                        {{cum}}
+                    </mat-list-option>
+                </mat-selection-list>
+            </mat-radio-group>
+        </td>
+    </tr>
+    <br>
+    <tr style="background-color: #DCDCDC; box-shadow: 0px 2px 10px;transform: translate(-235px, -165px);">
+        <td style="padding:10px; border: solid 1px; border-color: #5b5b5b57; width: 583px;">
+            <mat-card-header>
+                <mat-card-title>BURNING TEST RACK</mat-card-title>
+                <mat-form-field>
+                    <mat-label>Muestras</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </mat-card-header>
+            <mat-selection-list #rack>
+                <mat-list-option *ngFor="let rack of rackList">
+                    {{rack}}
+                </mat-list-option>
+            </mat-selection-list>
+        </td>
+    </tr>
+    <tr>
+        <mat-form-field class="example-obser" style="width: 315px; transform: translate(270px, -385px);">
+            <mat-label>OBSERVACIONES</mat-label>
+            <textarea style="background-color: blanchedalmond;" matInput placeholder="Distribución en el Peru SAA"></textarea>
+        </mat-form-field>
+    </tr>
 </mat-card>
