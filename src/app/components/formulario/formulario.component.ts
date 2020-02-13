@@ -28,9 +28,10 @@ export interface user2{
 })
 
 export class FormularioComponent implements OnInit {
-  columnsToDisplay: string[] = ["Muestras","Maximopicopositivo", "Minimopiconegativo","pulsemiciclo","pulciclo", "ton","toff"];
+  columnsToDisplay: string[] = ["Muestras","Maximopicopositivo", "Minimopiconegativo","pulsemiciclo","pulciclo", "ton","toff", "Actions"];
   public USER_DATA: user[] = [
   ];
+  edit = true;
   
   public newUser = {Maximopicopositivo: "", Minimopiconegativo:"", pulsemiciclo:"", pulciclo:"", ton:"", toff:""};
   public myDataArray: any;
@@ -45,7 +46,7 @@ export class FormularioComponent implements OnInit {
     console.warn(this.myDataArray);
   }
 
-  columnsToDisplay1: string[] = ["pulsos","picokv", "anchoms"];
+  columnsToDisplay1: string[] = ["pulsos","picokv", "anchoms","Actions"];
   public USER_DATA1: user1[] = [
   ];
   public newUser1 = {picokv: "", anchoms:""};
@@ -59,7 +60,11 @@ export class FormularioComponent implements OnInit {
     console.warn(this.dataSource);
   }
 
-  columnsToDisplay2: string[] = ["pulsos1","picokv1", "anchoms1"];
+OnEditRow(){
+  
+}
+
+  columnsToDisplay2: string[] = ["pulsos1","picokv1", "anchoms1", "Actions"];
   public USER_DATA2: user2[] = [
   ];
   public newUser2 = {picokv1: "", anchoms1:""};

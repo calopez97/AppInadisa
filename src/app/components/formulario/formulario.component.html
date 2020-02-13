@@ -224,6 +224,17 @@
                     <div> {{user.toff}} </div>
                 </mat-cell>
             </ng-container>
+            <ng-container matColumnDef="Actions">
+                <mat-header-cell *matHeaderCellDef> Opciones </mat-header-cell>
+                <th mat-cell *matCellDef="let user">
+                    <button mat-stroked-button color="Accent">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="warn">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </th>
+            </ng-container>
             <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
             <mat-row *matRowDef="let dataSource; columns: columnsToDisplay;"></mat-row>
         </mat-table>
@@ -366,6 +377,17 @@
                     <div> {{user1.anchoms}} </div>
                 </td>
             </ng-container>
+            <ng-container matColumnDef="Actions">
+                <mat-header-cell *matHeaderCellDef> Opciones </mat-header-cell>
+                <th mat-cell *matCellDef="let user1" style="width: 130px;">
+                    <button mat-stroked-button color="Primary">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="warn">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </th>
+            </ng-container>
             <mat-header-row *matHeaderRowDef="columnsToDisplay1"></mat-header-row>
             <mat-row *matRowDef="let dataSource; columns: columnsToDisplay1;"></mat-row>
         </mat-table>
@@ -412,7 +434,7 @@
                 </mat-form-field>
             </td>
         </tr>
-        <mat-table #table [dataSource]="dataSource2" class="mat-elevation-z7" style="margin-left: 85px;">
+        <mat-table #table [dataSource]="dataSource2" class="mat-elevation-z6" style="margin-left: 85px; width: 410px;">
             <ng-container matColumnDef="pulsos1">
                 <th mat-header-cell *matHeaderCellDef> Pulsos </th>
                 <td mat-cell *matCellDef="let element; let i = index;"> {{i+1}} </td>
@@ -428,6 +450,17 @@
                 <td mat-cell *matCellDef="let user2">
                     <div> {{user2.anchoms1}} </div>
                 </td>
+            </ng-container>
+            <ng-container matColumnDef="Actions">
+                <mat-header-cell *matHeaderCellDef> Opciones </mat-header-cell>
+                <th mat-cell *matCellDef="let user2" style="width: 130px;">
+                    <button mat-stroked-button color="Accent">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="warn">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </th>
             </ng-container>
             <mat-header-row *matHeaderRowDef="columnsToDisplay2"></mat-header-row>
             <mat-row *matRowDef="let dataSource2; columns: columnsToDisplay2;"></mat-row>
@@ -518,7 +551,25 @@
     <tr>
         <mat-form-field class="example-obser" style="width: 315px; transform: translate(270px, -385px);">
             <mat-label>OBSERVACIONES</mat-label>
-            <textarea style="background-color: blanchedalmond;" matInput placeholder="Distribución en el Peru SAA"></textarea>
+            <textarea style="background-color: blanchedalmond;" matInput
+                placeholder="Distribución en el Peru SAA"></textarea>
         </mat-form-field>
+    </tr>
+    <mat-divider></mat-divider>
+    <br>
+    <tr>
+        <td mat-card-header style="background-color: #DCDCDC; box-shadow: 0px 2px 10px;border: solid 1px; border-color: #5b5b5b57; padding:10px">
+            <mat-card-title>Se realizaron todas las pruebas...</mat-card-title>
+            <mat-form-field>
+                <mat-label>Muestras</mat-label>
+                <input matInput>
+            </mat-form-field>
+
+            <mat-selection-list #rack>
+                <mat-list-option *ngFor="let rack of rackList">
+                    {{rack}}
+                </mat-list-option>
+            </mat-selection-list>
+        </td>
     </tr>
 </mat-card>
