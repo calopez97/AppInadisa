@@ -15,7 +15,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { ArrancadoresComponent } from './components/home/arrancadores/arrancadores.component';
 import { CondensadoresComponent } from './components/home/condensadores/condensadores.component';
 import { BalastosComponent } from './components/home/balastos/balastos.component';
-import { FormularioComponent } from './components/formulario/formulario.component';
+import { FormularioComponent } from './components/form/formulario.component';
 import { ReactiveFormsModule, FormsModule  } from '@angular/forms'; 
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';

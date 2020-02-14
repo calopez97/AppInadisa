@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import { MatTableDataSource } from '@angular/material';
 
+
 export interface user {
   Maximopicopositivo: string;
   Minimopiconegativo: string;
@@ -28,14 +29,14 @@ export interface user2{
 })
 
 export class FormularioComponent implements OnInit {
-  columnsToDisplay: string[] = ["Muestras","Maximopicopositivo", "Minimopiconegativo","pulsemiciclo","pulciclo", "ton","toff", "Actions"];
-  public USER_DATA: user[] = [
+  columnsToDisplay: string[] = ["Muestras","Maximopicopositivo", "Minimopiconegativo","pulsemiciclo","pulciclo", "ton","toff", "Actions"]; 
+public USER_DATA: user[] = [
   ];
-  edit = true;
+  
   
   public newUser = {Maximopicopositivo: "", Minimopiconegativo:"", pulsemiciclo:"", pulciclo:"", ton:"", toff:""};
   public myDataArray: any;
-  resultado: string;
+  
   
 
   addName() {
@@ -45,6 +46,8 @@ export class FormularioComponent implements OnInit {
     this.newUser = {Maximopicopositivo:"", Minimopiconegativo:"", pulsemiciclo:"", pulciclo:"",ton:"", toff:""};
     console.warn(this.myDataArray);
   }
+
+
 
   columnsToDisplay1: string[] = ["pulsos","picokv", "anchoms","Actions"];
   public USER_DATA1: user1[] = [
@@ -60,9 +63,7 @@ export class FormularioComponent implements OnInit {
     console.warn(this.dataSource);
   }
 
-OnEditRow(){
-  
-}
+
 
   columnsToDisplay2: string[] = ["pulsos1","picokv1", "anchoms1", "Actions"];
   public USER_DATA2: user2[] = [
@@ -79,22 +80,6 @@ OnEditRow(){
   }
   
   
-
-  step = 0;
-
-  setStep(index: number) {
-    this.step = index;
-  }
-
-  nextStep() {
-    this.step++;
-  }
-
-  prevStep() {
-    this.step--;
-  }
-
-
   toppings = new FormControl();
   toppingList: string[] = ['Normal', 'Severa', 'Reducida'];
 

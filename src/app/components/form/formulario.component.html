@@ -490,75 +490,73 @@
     <br>
     <mat-divider></mat-divider>
     <br>
-    <tr style="background-color: gainsboro; box-shadow: 0px 2px 10px;transform: translateX(-235px);">
-        <td style="padding: 10px; border: solid 1px; border-color: #5b5b5b57">
-            <mat-card-header style="border-bottom: solid 1px; border-color: #5b5b5b57">
-                <mat-card-title class="example-h2">RIGIDEZ DIELÉCTRICA</mat-card-title>
-                <mat-card-subtitle>[2U + 1000V]/60s</mat-card-subtitle>
-            </mat-card-header>
+    <form>
+        <tr style="width: 200px; background-color: gainsboro; box-shadow: 0px 2px 10px;transform: translateX(-235px);">
+            <td style="padding: 10px; border: solid 1px; border-color: #5b5b5b57">
+                <mat-card-header style="border-bottom: solid 1px; border-color: #5b5b5b57">
+                    <mat-card-title class="example-h2">RIGIDEZ DIELÉCTRICA</mat-card-title>
+                    <mat-card-subtitle>[2U + 1000V]/60s</mat-card-subtitle>
+                </mat-card-header>
 
-            <mat-selection-list #cum>
-                <mat-list-option *ngFor="let cum of cumList">
-                    {{cum}}
-                </mat-list-option>
-            </mat-selection-list>
-        </td>
-        <td style="padding: 10px; border: solid 1px; border-color: #5b5b5b57">
-            <mat-card-header style="border-bottom: solid 1px; border-color: #5b5b5b57">
-                <mat-card-title class="example-h2">RESISTENCIA DE AISLAMIENTO</mat-card-title>
-                <mat-card-subtitle>[500VDc]/2M&Omega;</mat-card-subtitle>
-            </mat-card-header>
-
-            <mat-selection-list #cum>
-                <mat-list-option *ngFor="let cum of cumList">
-                    {{cum}}
-                </mat-list-option>
-            </mat-selection-list>
-        </td>
-    </tr>
-    <br>
-    <tr style="background-color: #DCDCDC; box-shadow: 0px 2px 10px;transform: translate(265px, -187px);">
-        <td style="padding:10px; border: solid 1px; border-color: #5b5b5b57">
-            <mat-card-header>
-                <mat-card-title>ENCENDIDO DE BOMBILLA</mat-card-title>
-            </mat-card-header>
-            <mat-radio-group>
                 <mat-selection-list #cum>
                     <mat-list-option *ngFor="let cum of cumList">
                         {{cum}}
                     </mat-list-option>
                 </mat-selection-list>
-            </mat-radio-group>
-        </td>
-    </tr>
-    <br>
-    <tr style="background-color: #DCDCDC; box-shadow: 0px 2px 10px;transform: translate(-235px, -165px);">
-        <td style="padding:10px; border: solid 1px; border-color: #5b5b5b57; width: 583px;">
-            <mat-card-header>
-                <mat-card-title>BURNING TEST RACK</mat-card-title>
-                <mat-form-field>
-                    <mat-label>Muestras</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </mat-card-header>
-            <mat-selection-list #rack>
-                <mat-list-option *ngFor="let rack of rackList">
-                    {{rack}}
-                </mat-list-option>
-            </mat-selection-list>
-        </td>
-    </tr>
-    <tr>
+            </td>
+
+            <td style="padding: 10px; border: solid 1px; border-color: #5b5b5b57">
+                <mat-card-header style="border-bottom: solid 1px; border-color: #5b5b5b57">
+                    <mat-card-title class="example-h2">RESISTENCIA DE AISLAMIENTO</mat-card-title>
+                    <mat-card-subtitle>[500VDc]/2M&Omega;</mat-card-subtitle>
+                </mat-card-header>
+
+                <mat-selection-list #cum>
+                    <mat-list-option *ngFor="let cum of cumList">
+                        {{cum}}
+                    </mat-list-option>
+                </mat-selection-list>
+            </td>
+        </tr>
+        <br>
+        <tr style="background-color: #DCDCDC; box-shadow: 0px 2px 10px;transform: translate(265px, -187px);">
+            <td style="padding:10px; border: solid 1px; border-color: #5b5b5b57">
+                <mat-card-header>
+                    <mat-card-title>ENCENDIDO DE BOMBILLA</mat-card-title>
+                </mat-card-header>
+                <mat-radio-group>
+                    <mat-selection-list #cum>
+                        <mat-list-option *ngFor="let cum of cumList">
+                            {{cum}}
+                        </mat-list-option>
+                    </mat-selection-list>
+                </mat-radio-group>
+            </td>
+        </tr>
+        <br>
+        <tr style="background-color: #DCDCDC; box-shadow: 0px 2px 10px;transform: translate(-235px, -165px);">
+            <td style="padding:10px; border: solid 1px; border-color: #5b5b5b57; width: 583px;">
+                <mat-card-header>
+                    <mat-card-title>BURNING TEST RACK</mat-card-title>
+                    <mat-form-field>
+                        <mat-label>Muestras</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </mat-card-header>
+                <mat-selection-list #rack>
+                    <mat-list-option *ngFor="let rack of rackList">
+                        {{rack}}
+                    </mat-list-option>
+                </mat-selection-list>
+            </td>
+        </tr>
         <mat-form-field class="example-obser" style="width: 315px; transform: translate(270px, -385px);">
             <mat-label>OBSERVACIONES</mat-label>
             <textarea style="background-color: blanchedalmond;" matInput
                 placeholder="Distribución en el Peru SAA"></textarea>
         </mat-form-field>
-    </tr>
-    <mat-divider></mat-divider>
-    <br>
-    <tr>
-        <td mat-card-header style="background-color: #DCDCDC; box-shadow: 0px 2px 10px;border: solid 1px; border-color: #5b5b5b57; padding:10px">
+        <td mat-card-header
+            style="transform: translate(-378px, -220px); background-color: #DCDCDC; box-shadow: 0px 2px 10px;border: solid 1px; border-color: #5b5b5b57; padding:10px">
             <mat-card-title>Se realizaron todas las pruebas...</mat-card-title>
             <mat-form-field>
                 <mat-label>Muestras</mat-label>
@@ -571,5 +569,13 @@
                 </mat-list-option>
             </mat-selection-list>
         </td>
-    </tr>
+        <br>
+        <td mat-card-header
+            style="transform: translate(-28px, -390px);background-color: #DCDCDC;box-shadow: 0px 2px 10px;border: solid 1px; border-color: #5b5b5b57; padding:10px">
+            <mat-card-title class="example-h2">RESULTADO INSPECCIÓN ELÉCTRICA</mat-card-title>
+            <mat-radio-group class="example-section">
+                <mat-radio-button value="1">ACEPTADO</mat-radio-button>
+                <mat-radio-button value="2">RECHAZADO</mat-radio-button>
+            </mat-radio-group>
+    </form>
 </mat-card>

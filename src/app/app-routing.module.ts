@@ -5,7 +5,7 @@ import {HomeComponent} from './components/home/home.component'
 import{ ArrancadoresComponent } from './components/home/arrancadores/arrancadores.component'
 import { BalastosComponent } from './components/home/balastos/balastos.component' 
 import {CondensadoresComponent} from './components/home/condensadores/condensadores.component'
-import { FormularioComponent } from './components/formulario/formulario.component'
+import { FormularioComponent } from './components/form/formulario.component'
 
 
 const routes: Routes = [
