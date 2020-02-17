@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>{{Actions}}</h1>
+<div mat-dialog-content>
+  <mat-form-field *ngIf="Actions != 'Delete'; else elseTemplate">
+    <input placeholder="{{Actions}}" matInput [(ngModel)]="local_data.Maximopicopositivo">
+</mat-form-field>
+<mat-form-field *ngIf="Actions != 'Delete'; else elseTemplate">
+    <input placeholder="{{Actions}}" matInput [(ngModel)]="local_data.Minimopiconegativo">
+</mat-form-field>
+<mat-form-field *ngIf="Actions != 'Delete'; else elseTemplate">
+    <input placeholder="{{Actions}}" matInput [(ngModel)]="local_data.pulsemiciclo">
+</mat-form-field>
+<mat-form-field *ngIf="Actions != 'Delete'; else elseTemplate">
+    <input placeholder="{{Actions}}" matInput [(ngModel)]="local_data.pulciclo">
+</mat-form-field>
+<mat-form-field *ngIf="Actions != 'Delete'; else elseTemplate">
+    <input placeholder="{{Actions.ton}}" matInput [(ngModel)]="local_data.ton">
+</mat-form-field> 
+<mat-form-field *ngIf="Actions != 'Delete'; else elseTemplate">
+    <input placeholder="{{Actions}}" matInput [(ngModel)]="local_data.toff">
+</mat-form-field>
+  
+  <ng-template #elseTemplate>
+    Sure to delete <b>{{local_data.Maximopicopositivo}}</b> 
+  </ng-template>
+  
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="doActions()">{{Actions}}</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+</div>

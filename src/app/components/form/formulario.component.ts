@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {FormControl} from '@angular/forms';
-import { MatTableDataSource } from '@angular/material';
+
+import { MatDialog, MatTable, MatTableDataSource } from '@angular/material';
+import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
 
 
 export interface user {
@@ -37,7 +39,53 @@ public USER_DATA: user[] = [
   public newUser = {Maximopicopositivo: "", Minimopiconegativo:"", pulsemiciclo:"", pulciclo:"", ton:"", toff:""};
   public myDataArray: any;
   
-  
+  @ViewChild(MatTable,{static:true}) table: MatTable<any>;
+
+  openDialog(Actions,obj){
+    obj.Actions = Actions; 
+    const dialogRef = this.dialog.open(DialogBoxComponent,{ 
+      width: '300px', 
+      data: obj
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if(result.event == 'Add'){
+        this.addRowData(result.data);
+      }else if(result.event == 'Update'){
+        this.updateRowData(result.data);
+      }else if(result.event == 'Delete'){
+        this.deleteRowData(result.data);
+      }
+    });
+  }
+
+  addRowData(_row_obj){
+    var d = new Date();
+    this.USER_DATA.push;
+    this.table.renderRows();
+    
+  }
+
+  updateRowData(row_obj){
+    this.USER_DATA = this.USER_DATA.filter((value,_key)=>{
+      if(value.Maximopicopositivo = row_obj.Maximopicopositivo){
+        value.Minimopiconegativo = row_obj.Minimopiconegativo;
+        value.pulciclo = row_obj.pulciclo; 
+        value.pulsemiciclo = row_obj.pulsemiciclo; 
+        value.toff = row_obj.toff;
+        value.ton = row_obj.ton;
+      }
+      return true;
+    });
+  }
+
+  deleteRowData(row_obj){
+    this.USER_DATA = this.USER_DATA.filter((value,_key)=>{
+      return value.Maximopicopositivo !=row_obj.Maximopicopositivo; 
+    });
+  }
+
+
+
 
   addName() {
     const newUsersArray = this.USER_DATA;
@@ -46,7 +94,6 @@ public USER_DATA: user[] = [
     this.newUser = {Maximopicopositivo:"", Minimopiconegativo:"", pulsemiciclo:"", pulciclo:"",ton:"", toff:""};
     console.warn(this.myDataArray);
   }
-
 
 
   columnsToDisplay1: string[] = ["pulsos","picokv", "anchoms","Actions"];
@@ -104,8 +151,9 @@ public USER_DATA: user[] = [
   aceptado = false;
   rechazado = false; 
   
-  constructor() { 
+  constructor(public dialog: MatDialog) { 
     this.myDataArray = new MatTableDataSource<user>([...this.USER_DATA]);
+
   }
 
   ngOnInit() {

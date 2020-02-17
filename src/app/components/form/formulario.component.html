@@ -227,10 +227,10 @@
             <ng-container matColumnDef="Actions">
                 <mat-header-cell *matHeaderCellDef> Opciones </mat-header-cell>
                 <th mat-cell *matCellDef="let user">
-                    <button mat-stroked-button color="Accent">
+                    <button mat-stroked-button matTooltip="Click para editar" color="Accent" (click)="openDialog('Update', user)">
                         <mat-icon>edit</mat-icon>
                     </button>
-                    <button mat-stroked-button color="warn">
+                    <button mat-stroked-button  matTooltip="Click para eliminar" color="warn" (click)="openDialog('Delete', user)"> 
                         <mat-icon>delete</mat-icon>
                     </button>
                 </th>
@@ -454,7 +454,7 @@
             <ng-container matColumnDef="Actions">
                 <mat-header-cell *matHeaderCellDef> Opciones </mat-header-cell>
                 <th mat-cell *matCellDef="let user2" style="width: 130px;">
-                    <button mat-stroked-button color="Accent">
+                    <button mat-stroked-button color="Accent" >
                         <mat-icon>edit</mat-icon>
                     </button>
                     <button mat-stroked-button color="warn">

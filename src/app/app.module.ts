@@ -26,6 +26,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
+import { MatDialogModule, MatFormFieldModule, MatButtonModule } from '@angular/material';
+import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
+
+
 
 
 
@@ -44,7 +48,9 @@ import {MatTableModule} from '@angular/material/table';
     HomeComponent,
     ArrancadoresComponent,
     CondensadoresComponent,
-    BalastosComponent, 
+    BalastosComponent,
+    DialogBoxComponent,
+   
   ],
   
   imports: [MatSelectModule,
@@ -63,9 +69,18 @@ import {MatTableModule} from '@angular/material/table';
     MatListModule,
     MatExpansionModule,
     MatIconModule,
-    MatInputModule, MatTableModule
+    MatInputModule, MatTableModule,
+    FormsModule,
+    MatTableModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatInputModule
   ], 
-
+  entryComponents:[
+    DialogBoxComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
