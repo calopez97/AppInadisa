@@ -12,7 +12,6 @@ import { HomeComponent } from './components/home/home.component';
 import {MatCardModule} from '@angular/material/card'; 
 import {MatDividerModule} from '@angular/material/divider';
 import {MatTooltipModule} from '@angular/material/tooltip';
-import { ArrancadoresComponent } from './components/home/arrancadores/arrancadores.component';
 import { CondensadoresComponent } from './components/home/condensadores/condensadores.component';
 import { BalastosComponent } from './components/home/balastos/balastos.component';
 import { FormularioComponent } from './components/form/formulario.component';
@@ -28,6 +27,17 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import { MatDialogModule, MatFormFieldModule, MatButtonModule } from '@angular/material';
 import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
+import { FormthreetapComponent } from './components/home/balastos/formthreetap/formthreetap.component';
+import { FormcwaComponent } from './components/home/balastos/formcwa/formcwa.component';
+import { FormdoblepotenciaComponent } from './components/home/balastos/formdoblepotencia/formdoblepotencia.component';
+
+import {HttpClientModule} from '@angular/common/http';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
+
+
 
 
 
@@ -46,14 +56,21 @@ import { DialogBoxComponent } from './components/dialog-box/dialog-box.component
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    ArrancadoresComponent,
     CondensadoresComponent,
     BalastosComponent,
     DialogBoxComponent,
+    FormthreetapComponent,
+    FormcwaComponent,
+    FormdoblepotenciaComponent,
+    
    
   ],
   
-  imports: [MatSelectModule,
+  imports: [MatToolbarModule,
+    MatPaginatorModule, 
+    MatSortModule, 
+    HttpClientModule,
+    MatSelectModule,
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
@@ -79,7 +96,8 @@ import { DialogBoxComponent } from './components/dialog-box/dialog-box.component
     MatInputModule
   ], 
   entryComponents:[
-    DialogBoxComponent
+    DialogBoxComponent, 
+
   ],
   providers: [],
   bootstrap: [AppComponent]

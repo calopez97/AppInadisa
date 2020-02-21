@@ -1,0 +1,256 @@
+<app-navbar></app-navbar>
+<mat-card class="contact-card">
+    <mat-card-header>
+        <mat-card-title>BALASTO</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    TIPO BALASTO
+                </mat-panel-title>
+                <mat-icon>add_circle</mat-icon>
+            </mat-expansion-panel-header>
+            <mat-form-field>
+                <mat-label>Código del Balasto ThreeTap</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-action-row>
+                <button mat-button color="primary" (click)="nextStep()">SIGUIENTE</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+        <br>
+        <form class="form-threetap">
+            <table class="example-full-width" cellspacing="0">
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Tamaño de Lote</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Semana</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Fabricacion</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </table>
+            <table class="example-full-width" cellspacing="0">
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Muestras</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Muestras Electricas</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Muestras Mecanicas</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <br>
+        <mat-divider></mat-divider>
+        <br>
+        <mat-card-header>
+            <mat-card-title>CLASE</mat-card-title>
+        </mat-card-header>
+        <tr>
+            <td style="padding-left: 35px;">
+                <mat-card-header>
+                    <mat-card-subtitle>Mecánica.</mat-card-subtitle>
+                </mat-card-header>
+                <mat-selection-list #Toppings>
+                    <mat-list-option *ngFor="let topping of toppingList">
+                        {{topping}}
+                    </mat-list-option>
+                </mat-selection-list>
+            </td>
+            <td style="padding-left: 240px;">
+                <mat-card-header>
+                    <mat-card-subtitle>Eléctrica.</mat-card-subtitle>
+                </mat-card-header>
+                <mat-selection-list #Toppings>
+                    <mat-list-option *ngFor="let topping of toppingList">
+                        {{topping}}
+                    </mat-list-option>
+                </mat-selection-list>
+            </td>
+        </tr>
+        <br>
+        <mat-divider></mat-divider>
+        <br>
+        <mat-card-header>
+            <mat-card-title> INSPECCIÓN MECÁNICA </mat-card-title>
+        </mat-card-header>
+        <br>
+        <tr>
+            <td style="padding-right: 200px;">
+                <mat-card-header>
+                    <mat-card-subtitle>Empaque</mat-card-subtitle>
+                </mat-card-header>
+                <mat-selection-list #Empaque>
+                    <mat-list-option *ngFor="let Empaque of EmpaqueList">
+                        {{Empaque}}
+                    </mat-list-option>
+                </mat-selection-list>
+            </td>
+            <td style="padding-right: 200px;">
+                <mat-card-header>
+                    <mat-card-subtitle>Producto</mat-card-subtitle>
+                </mat-card-header>
+                <mat-selection-list #Producto>
+                    <mat-list-option *ngFor="let Producto of ProductoList">
+                        {{Producto}}
+                    </mat-list-option>
+                </mat-selection-list>
+            </td>
+            <td style="padding-right: 200px;">
+                <mat-card-header>
+                    <mat-card-subtitle>Tipo Acabado</mat-card-subtitle>
+                </mat-card-header>
+                <mat-selection-list #Acabado>
+                    <mat-list-option *ngFor="let Acabado of AcabadoList">
+                        {{Acabado}}
+                    </mat-list-option>
+                </mat-selection-list>
+            </td>
+            <td style="padding-right: 200px;">
+                <mat-card-header>
+                    <mat-card-subtitle>Tipo Terminales</mat-card-subtitle>
+                </mat-card-header>
+                <mat-selection-list #Terminales>
+                    <mat-list-option *ngFor="let Terminales of TerminalesList">
+                        {{Terminales}}
+                    </mat-list-option>
+                </mat-selection-list>
+            </td>
+        </tr>
+        <br>
+        <mat-card-title class="example-h2">RESULTADO INSPECCION MECÁNICA</mat-card-title>
+        <mat-radio-group class="example-section">
+            <mat-radio-button value="1">ACEPTADO</mat-radio-button>
+            <mat-radio-button value="2">RECHAZADO</mat-radio-button>
+        </mat-radio-group>
+    </mat-card-content>
+    <br>
+    <mat-divider></mat-divider>
+    <br>
+    <mat-card-header>
+        <mat-card-title>INSPECCIÓN ELÉCTRICA</mat-card-title>
+    </mat-card-header>
+    <form class="form-insp-elec">
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>TAP de Conexión[V]</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Corriente [A]</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Perdidas[W]</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>IK-106[A]</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <mat-table #table [dataSource]="myNewData" class="mat-elevation-z8">
+            <ng-container matColumnDef="Muestras">
+                <th mat-header-cell *matHeaderCellDef>Muestras</th>
+                <td mat-cell *matCellDef="let inspelectrica; let i = index;"> {{i+1}} </td>
+            </ng-container>
+            <ng-container matColumnDef="corriente">
+                <mat-header-cell *matHeaderCellDef>Corriente [A]</mat-header-cell>
+                <mat-cell *matCellDef="let inspelectrica">
+                    <div> {{inspelectrica.corriente}} </div>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="perdidas">
+                <mat-header-cell *matHeaderCellDef>Perdidas Frio [W]</mat-header-cell>
+                <mat-cell *matCellDef="let inspelectrica">
+                    <div> {{inspelectrica.perdidas}} </div>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="corrienteik">
+                <mat-header-cell *matHeaderCellDef>Corriente IK-106 [A]</mat-header-cell>
+                <mat-cell *matCellDef="let inspelectrica">
+                    <div> {{inspelectrica.corrienteik}} </div>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="Actions">
+                <mat-header-cell *matHeaderCellDef> Opciones </mat-header-cell>
+                <th mat-cell *matCellDef="let inspelectrica">
+                    <button mat-stroked-button matTooltip="Click para editar" color="Accent"
+                        (click)="openDialog('Update', inspelectrica)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-stroked-button matTooltip="Click para eliminar" color="warn"
+                        (click)="openDialog('Delete', inspelectrica)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </th>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+            <mat-row *matRowDef="let myNewData; columns: columnsToDisplay;"></mat-row>
+        </mat-table>
+        <form style="display: table; margin-left: 155px;">
+            <tr>
+                <td>
+                    <mat-form-field apparence="legacy">
+                        <mat-label>Corriente 100% [A]</mat-label>
+                        <input matInput [(ngModel)]="newInsp.corriente" type="text" name="newcorriente"
+                            id="newcorriente" class="form-control">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field apparence="legacy">
+                        <mat-label>Perdidas Frio [W]</mat-label>
+                        <input matInput [(ngModel)]="newInsp.perdidas" type="text" name="newperdidas" id="newperdidas"
+                            class="form-control">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field apparence="legacy">
+                        <mat-label>Corriente IK-106 [A]</mat-label>
+                        <input matInput [(ngModel)]="newInsp.corrienteik" type="text" name="newcorrienteik"
+                            id="newcorrienteik" class="form-control">
+                    </mat-form-field>
+                </td>
+            </tr>
+        </form>
+
+        <button mat-raised-button type="button" (click)="addInsp()"
+            style="color: Accent;margin-bottom: 10px;">Registrar</button>
+    
