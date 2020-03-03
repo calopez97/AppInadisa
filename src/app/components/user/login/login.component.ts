@@ -13,10 +13,14 @@ export class LoginComponent implements OnInit {
   
   constructor(private router: Router, public authService: AuthService, public afAuth: AngularFireAuth) { }
 
-  User: string;
-  Password: string; 
+  public User = '';
+  public Password = ''; 
 
   ngOnInit() {
+    var userSaveLogged = localStorage.getItem('userSaveLogged');
+    if (userSaveLogged != '') {
+      this.User = userSaveLogged;
+    }
   }
 
   login(): void{
@@ -42,6 +46,7 @@ export class LoginComponent implements OnInit {
   }
 
   redirectionHome() {
+    localStorage.setItem('userSaveLogged', this.User);
     const Toast = Swal.mixin({
       toast:  true,
       position: 'top-end',
