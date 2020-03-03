@@ -11,15 +11,15 @@ import { FormdoblepotenciaComponent } from './components/home/balastos/formdoble
 
 
 const routes: Routes = [
+  { path:'', component:LoginComponent, pathMatch: 'full' },
   { path:'login', component:LoginComponent },
-  {path:'home', component:HomeComponent},
-  {path:'', component:LoginComponent},
-  {path:'home/balastos', component:BalastosComponent},
-  {path:'home/condensadores', component:CondensadoresComponent},
-  {path:'formulario', component:FormularioComponent},
-  {path:'formulariothreetap', component:FormthreetapComponent},
-  {path:'formulariocwa', component: FormcwaComponent},
-  {path:'formulariodoblepot', component: FormdoblepotenciaComponent}, 
+  { path:'home', component:HomeComponent },
+  { path:'home/balastos', component:BalastosComponent },
+  { path:'home/condensadores', component:CondensadoresComponent },
+  { path:'formulario', component:FormularioComponent },
+  { path:'formulariothreetap', component:FormthreetapComponent },
+  { path:'formulariocwa', component: FormcwaComponent },
+  { path:'formulariodoblepot', component: FormdoblepotenciaComponent }, 
 ];
 
 @NgModule({

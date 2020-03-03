@@ -5,10 +5,10 @@
         </mat-card-header>
         <mat-card-content style="margin-top: -45px;">
             <mat-form-field>
-                <input  matInput placeholder="Usuario" name="Usuario">
+                <input  matInput placeholder="Usuario" [(ngModel)]="User" name="User">
             </mat-form-field>
             <mat-form-field style="display: table-row-group;">
-                <input  matInput  placeholder="Contraseña" type="password" name="Contraseña">
+                <input  matInput  placeholder="Contraseña" type="password" [(ngModel)]="Password" name="Password">
             </mat-form-field>
             <div class="botton" style="margin-top: 20px;">
                 <a mat-raised-button (click)="login()" color="accent">Ingresar &raquo;</a>
