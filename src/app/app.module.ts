@@ -25,7 +25,12 @@ import { FormdoblepotenciaComponent } from './components/home/balastos/formdoble
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule, FormsModule  } from '@angular/forms'; 
 
-
+//Firebase
+import {AngularFireAuthModule} from '@angular/fire/auth'
+ import {AngularFirestoreModule} from '@angular/fire/firestore';
+ import {AngularFireStorageModule, StorageBucket} from '@angular/fire/storage'; 
+ import {AngularFireModule} from '@angular/fire'; 
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [ 
@@ -40,8 +45,6 @@ import { ReactiveFormsModule, FormsModule  } from '@angular/forms';
     FormthreetapComponent,
     FormcwaComponent,
     FormdoblepotenciaComponent,
-    
-   
   ],
   
   imports: [
@@ -53,12 +56,18 @@ import { ReactiveFormsModule, FormsModule  } from '@angular/forms';
     MatModule,
     FormsModule,
     FormsModule,
+    AngularFireModule.initializeApp(environment.config),
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireAuthModule,
   ], 
   entryComponents:[
     DialogBoxComponent, 
-
   ],
-  providers: [],
+
+  providers: [
+    { provide: StorageBucket, useValue:'gs://appinadisa.appspot.com'}
+  ],
   bootstrap: [AppComponent]
 })
 

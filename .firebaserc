@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "appinadisa": {
+      "hosting": {
+        "AppInadisa": [
+          "appinadisa"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "AppInadisa",
+      "public": "dist/AppInadisa",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
