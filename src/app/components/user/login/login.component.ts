@@ -34,15 +34,6 @@ export class LoginComponent implements OnInit {
           'error'
         )
       });
-    // if(this.User == 'admin' && this.Password == 'admin'){
-    //   this.router.navigate(["home"]);
-    // }else{
-    //   Swal.fire({
-    //     icon: 'error',
-    //     title: 'Error!',
-    //     text: 'Por favor revise los datos ingresados'
-    //   });
-    // }
   }
 
   redirectionHome() {
