@@ -1,14 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MatButtonModule} from '@angular/material/button'
+
 import {
   MatCardModule,
+  MatButtonModule,
   MatToolbarModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatMenuModule,
+  MatDividerModule,
+  MatTooltipModule,
+  MatSelectModule,
+  MatRadioModule,
+  MatCheckboxModule,
+  MatSliderModule,
+  MatListModule,
+  MatExpansionModule,
+  MatIconModule,
+  MatTableModule,
+  MatDialogModule,
+  MatPaginatorModule,
+  MatSortModule
 } from '@angular/material';
-import {MatMenuModule} from '@angular/material/menu'; 
-
 
 @NgModule({
   declarations: [],
@@ -19,7 +32,20 @@ import {MatMenuModule} from '@angular/material/menu';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDividerModule,
+    MatTooltipModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    MatSliderModule,
+    MatListModule,
+    MatExpansionModule,
+    MatIconModule,
+    MatTableModule,
+    MatDialogModule,
+    MatPaginatorModule,
+    MatSortModule
     
   ],
   exports: [
@@ -28,7 +54,20 @@ import {MatMenuModule} from '@angular/material/menu';
     MatCardModule,
     MatToolbarModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDividerModule,
+    MatTooltipModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    MatSliderModule,
+    MatListModule,
+    MatExpansionModule,
+    MatIconModule,
+    MatTableModule,
+    MatDialogModule,
+    MatPaginatorModule,
+    MatSortModule
   ]
 })
 export class MatModule { }
