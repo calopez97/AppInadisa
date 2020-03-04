@@ -49,11 +49,6 @@ export class LoginComponent implements OnInit {
       icon: 'success',
       title: 'Bienvenido!'
     });
-<<<<<<< HEAD
     this.router.navigate(['/home']);
-=======
-    this.isLoading = false;
-    this.router.navigate(['/dashboard']);
->>>>>>> 545e1fbcba4c902387aa23d8e65004e0c8cf6720
   }
 }
