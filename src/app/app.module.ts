@@ -32,6 +32,7 @@ import {AngularFireAuthModule} from '@angular/fire/auth'
  import {AngularFireModule} from '@angular/fire'; 
 import { environment } from 'src/environments/environment';
 import { FooterComponent } from './components/header/footer/footer.component';
+import { ProgressSpinerComponent } from './components/header/progress-spiner/progress-spiner.component';
 
 @NgModule({
   declarations: [ 
@@ -47,6 +48,7 @@ import { FooterComponent } from './components/header/footer/footer.component';
     FormcwaComponent,
     FormdoblepotenciaComponent,
     FooterComponent,
+    ProgressSpinerComponent,
   ],
   
   imports: [

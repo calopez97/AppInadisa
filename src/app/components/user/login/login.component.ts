@@ -10,7 +10,7 @@ import Swal from 'sweetalert2'
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  
+  isLoading = false;
   constructor(private router: Router, public authService: AuthService) { }
 
   public User = '';
@@ -24,10 +24,12 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void{
+    this.isLoading = true;
     this.authService.LoginUser(this.User, this.Password)
       .then((res) => {
         this.redirectionHome();
       }).catch(err => {
+        this.isLoading = false;
         Swal.fire(
           'Error!',
           'Por favor revise los datos ingresados',
@@ -48,6 +50,7 @@ export class LoginComponent implements OnInit {
       icon: 'success',
       title: 'Bienvenido!'
     });
+    this.isLoading = false;
     this.router.navigate(['/dashboard']);
   }
 }
