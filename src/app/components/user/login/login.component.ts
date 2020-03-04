@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { AuthService} from '../../../services/auth.service';
+import { AuthService} from '../../../services/index';
 import Swal from 'sweetalert2'
 
 @Component({
@@ -10,8 +9,8 @@ import Swal from 'sweetalert2'
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  
-  constructor(private router: Router, public authService: AuthService, public afAuth: AngularFireAuth) { }
+  isLoading = false;
+  constructor(private router: Router, public authService: AuthService) { }
 
   public User = '';
   public Password = ''; 
@@ -24,10 +23,12 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void{
-    this.authService.loginUser(this.User, this.Password)
+    this.isLoading = true;
+    this.authService.LoginUser(this.User, this.Password)
       .then((res) => {
         this.redirectionHome();
       }).catch(err => {
+        this.isLoading = false;
         Swal.fire(
           'Error!',
           'Por favor revise los datos ingresados',
@@ -48,6 +49,11 @@ export class LoginComponent implements OnInit {
       icon: 'success',
       title: 'Bienvenido!'
     });
+<<<<<<< HEAD
     this.router.navigate(['/home']);
+=======
+    this.isLoading = false;
+    this.router.navigate(['/dashboard']);
+>>>>>>> 545e1fbcba4c902387aa23d8e65004e0c8cf6720
   }
 }
