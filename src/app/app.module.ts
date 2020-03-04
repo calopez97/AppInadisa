@@ -31,6 +31,8 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireStorageModule, StorageBucket} from '@angular/fire/storage'; 
 import {AngularFireModule} from '@angular/fire'; 
 import { environment } from 'src/environments/environment';
+
+//footer/SpinnerLoading
 import { FooterComponent } from './components/header/footer/footer.component';
 import { ProgressSpinerComponent } from './components/header/progress-spiner/progress-spiner.component';
 
