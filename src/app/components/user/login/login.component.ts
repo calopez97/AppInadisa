@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AngularFireAuth } from '@angular/fire/auth';
+// import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthService} from '../../../services/auth.service';
 import Swal from 'sweetalert2'
 
@@ -11,7 +11,7 @@ import Swal from 'sweetalert2'
 })
 export class LoginComponent implements OnInit {
   
-  constructor(private router: Router, public authService: AuthService, public afAuth: AngularFireAuth) { }
+  constructor(private router: Router, public authService: AuthService) { }
 
   public User = '';
   public Password = ''; 
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void{
-    this.authService.loginUser(this.User, this.Password)
+    this.authService.LoginUser(this.User, this.Password)
       .then((res) => {
         this.redirectionHome();
       }).catch(err => {

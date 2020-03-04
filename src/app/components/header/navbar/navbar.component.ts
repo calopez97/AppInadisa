@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
-    this.authService.logoutUser();
+    this.authService.LogoutUser();
     this.router.navigate(['/']);
     const Toast = Swal.mixin({
       toast: true,

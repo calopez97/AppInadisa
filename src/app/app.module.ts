@@ -31,6 +31,7 @@ import {AngularFireAuthModule} from '@angular/fire/auth'
  import {AngularFireStorageModule, StorageBucket} from '@angular/fire/storage'; 
  import {AngularFireModule} from '@angular/fire'; 
 import { environment } from 'src/environments/environment';
+import { FooterComponent } from './components/header/footer/footer.component';
 
 @NgModule({
   declarations: [ 
@@ -45,6 +46,7 @@ import { environment } from 'src/environments/environment';
     FormthreetapComponent,
     FormcwaComponent,
     FormdoblepotenciaComponent,
+    FooterComponent,
   ],
   
   imports: [
