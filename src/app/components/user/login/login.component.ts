@@ -48,6 +48,6 @@ export class LoginComponent implements OnInit {
       icon: 'success',
       title: 'Bienvenido!'
     });
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/home']);
   }
 }

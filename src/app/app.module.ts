@@ -27,9 +27,9 @@ import { ReactiveFormsModule, FormsModule  } from '@angular/forms';
 
 //Firebase
 import {AngularFireAuthModule} from '@angular/fire/auth'
- import {AngularFirestoreModule} from '@angular/fire/firestore';
- import {AngularFireStorageModule, StorageBucket} from '@angular/fire/storage'; 
- import {AngularFireModule} from '@angular/fire'; 
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireStorageModule, StorageBucket} from '@angular/fire/storage'; 
+import {AngularFireModule} from '@angular/fire'; 
 import { environment } from 'src/environments/environment';
 
 @NgModule({
