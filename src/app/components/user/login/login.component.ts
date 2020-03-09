@@ -7,13 +7,16 @@ import Swal from 'sweetalert2'
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
-})
+}) 
+
+
+
 export class LoginComponent implements OnInit {
   isLoading = false;
   constructor(private router: Router, public authService: AuthService) { }
 
   public User = '';
-  public Password = ''; 
+  public Password = '';
 
   ngOnInit() {
     var userSaveLogged = localStorage.getItem('userSaveLogged');
